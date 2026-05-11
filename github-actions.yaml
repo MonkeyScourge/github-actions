@@ -1,0 +1,18 @@
+name: GitHu Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Job is triggered by a ${{ github.event_name }} event>
+      - run: echo "Job is now running on a ${{ runner.os }} server is h>
+      - run: echo "Name of the branch is ${{ github.ref }} and the repo>
+      - name: Checkout repository code
+      - uses: actions/checkout@v6
+      - run: echo "The ${{ github.repository }} repository is cloned to>
+      - run: echo "Workflow is read to test code on runner"
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "Job status: ${{ job.status}}"
